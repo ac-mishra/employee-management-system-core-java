@@ -52,6 +52,50 @@ public class EmployeeService {
         return employeeMap.get(id);
     }
 
+    public void searchByName(String keyword) {
+
+        boolean found = false;
+
+        for (Employee employee : employees) {
+
+            if (employee.getName()
+                    .toLowerCase()
+                    .contains(keyword.toLowerCase())) {
+
+                System.out.println(employee);
+                found = true;
+            }
+        }
+
+        if (!found) {
+
+            System.out.println(
+                    "❌ No employee found!");
+        }
+    }
+
+    public void searchByDepartment(
+            String department) {
+
+        boolean found = false;
+
+        for (Employee employee : employees) {
+
+            if (employee.getDepartment()
+                    .equalsIgnoreCase(department)) {
+
+                System.out.println(employee);
+                found = true;
+            }
+        }
+
+        if (!found) {
+
+            System.out.println(
+                    "❌ No employee found!");
+        }
+    }
+
     public void saveData() {
 
         EmployeeFileHandler

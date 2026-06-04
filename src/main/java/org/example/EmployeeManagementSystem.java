@@ -199,27 +199,85 @@ public class EmployeeManagementSystem {
 
     public static void searchEmployee() {
 
+        System.out.println(
+                "\n=== SEARCH EMPLOYEE ===");
+
+        System.out.println(
+                "1. Search by ID");
+
+        System.out.println(
+                "2. Search by Name");
+
+        System.out.println(
+                "3. Search by Department");
+
         System.out.print(
-                "\nEnter Employee ID: ");
+                "Enter choice: ");
 
-        String id =
-                sc.nextLine();
+        int choice;
 
-        Employee employee =
-                service.findById(id);
+        try {
 
-        if (employee == null) {
+            choice =
+                    Integer.parseInt(
+                            sc.nextLine());
+
+        } catch (Exception e) {
 
             System.out.println(
-                    "❌ Employee not found!");
+                    "❌ Invalid choice!");
 
             return;
         }
 
-        System.out.println(
-                "\nEmployee Found:");
+        switch (choice) {
 
-        System.out.println(employee);
+            case 1:
+
+                System.out.print(
+                        "Enter Employee ID: ");
+
+                Employee employee =
+                        service.findById(
+                                sc.nextLine());
+
+                if (employee != null) {
+
+                    System.out.println(employee);
+
+                } else {
+
+                    System.out.println(
+                            "❌ Employee not found!");
+                }
+
+                break;
+
+            case 2:
+
+                System.out.print(
+                        "Enter Name: ");
+
+                service.searchByName(
+                        sc.nextLine());
+
+                break;
+
+            case 3:
+
+                System.out.print(
+                        "Enter Department: ");
+
+                service.searchByDepartment(
+                        sc.nextLine());
+
+                break;
+
+            default:
+
+                System.out.println(
+                        "❌ Invalid choice!");
+        }
     }
 
     public static void updateEmployee() {
@@ -264,9 +322,19 @@ public class EmployeeManagementSystem {
             System.out.print(
                     "New Salary: ");
 
-            employee.setSalary(
+            double salary =
                     Double.parseDouble(
-                            sc.nextLine()));
+                            sc.nextLine());
+
+            if (!ValidationUtils.isValidSalary(salary)) {
+
+                System.out.println(
+                        "❌ Salary must be greater than or equal to 0!");
+
+                return;
+            }
+
+            employee.setSalary(salary);
 
         } catch (Exception e) {
 
