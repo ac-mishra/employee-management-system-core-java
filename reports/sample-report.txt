@@ -1,0 +1,23 @@
+=== EMPLOYEE REPORTS ===
+
+💰 SALARY STATISTICS:
+
+• Total Employees: 2
+
+• Total Salary: ₹160,000.00
+
+• Average Salary: ₹80,000.00
+
+• Highest Salary: ₹90,000.00 (Amrit Chandan)
+
+• Lowest Salary: ₹70,000.00 (Rahul Sharma)
+
+🏢 DEPARTMENT SUMMARY:
+
+• Computer : 2 employees, Average Salary ₹80,000.00
+
+👔 POSITION SUMMARY:
+
+• Senior Java Developer : 1 employee
+
+• Web Developer : 1 employee

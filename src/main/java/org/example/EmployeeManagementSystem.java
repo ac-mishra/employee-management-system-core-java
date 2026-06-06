@@ -30,7 +30,8 @@ public class EmployeeManagementSystem {
             System.out.println("5. Delete Employee");
             System.out.println("6. Generate Reports");
             System.out.println("7. Save to File");
-            System.out.println("8. Exit");
+            System.out.println("8. Load From File");
+            System.out.println("9. Exit");
 
             System.out.print("Enter your choice: ");
 
@@ -83,8 +84,14 @@ public class EmployeeManagementSystem {
 
                 case 8:
 
+                    service.loadData();
+
+                    break;
+
+                case 9:
+
                     System.out.println(
-                            "\nThank you for using Employee Management System!");
+                            "\nThank you for using Employee Management System! \nDeveloped By Amrit Chandan Mishra");
 
                     break;
 
@@ -94,7 +101,7 @@ public class EmployeeManagementSystem {
                             "❌ Invalid choice!");
             }
 
-        } while (choice != 8);
+        } while (choice != 9);
 
         sc.close();
     }

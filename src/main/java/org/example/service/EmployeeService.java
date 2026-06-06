@@ -101,4 +101,22 @@ public class EmployeeService {
         EmployeeFileHandler
                 .saveEmployees(employees);
     }
+
+    public void loadData() {
+
+        employees =
+                EmployeeFileHandler.loadEmployees();
+
+        employeeMap.clear();
+
+        for (Employee employee : employees) {
+
+            employeeMap.put(
+                    employee.getId(),
+                    employee);
+        }
+
+        System.out.println(
+                "✅ Employee data loaded successfully!");
+    }
 }
