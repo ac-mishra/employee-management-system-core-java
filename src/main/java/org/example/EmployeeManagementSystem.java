@@ -7,6 +7,11 @@ import org.example.util.ValidationUtils;
 
 import java.util.Scanner;
 
+/**
+ * Main class for Employee Management System.
+ * Provides menu-driven interface for
+ * employee management operations.
+ */
 public class EmployeeManagementSystem {
 
     static Scanner sc = new Scanner(System.in);
@@ -69,19 +74,21 @@ public class EmployeeManagementSystem {
                 case 5:
                     deleteEmployee();
                     break;
-
+// Generate employee statistics report
                 case 6:
                     EmployeeReportGenerator
                             .generateSalaryReport(
                                     service.getEmployees());
                     break;
 
+                // Save employee data to file
                 case 7:
 
                     service.saveData();
 
                     break;
 
+                // Load employee data from file
                 case 8:
 
                     service.loadData();
@@ -106,6 +113,7 @@ public class EmployeeManagementSystem {
         sc.close();
     }
 
+    // Add a new employee record
     public static void addEmployee() {
 
         System.out.println(
@@ -183,6 +191,7 @@ public class EmployeeManagementSystem {
                 "✅ Employee added successfully!");
     }
 
+    // Display all employee records
     public static void viewEmployees() {
 
         System.out.println(
@@ -204,6 +213,7 @@ public class EmployeeManagementSystem {
         }
     }
 
+    // Search employee by ID, name, or department
     public static void searchEmployee() {
 
         System.out.println(
@@ -287,6 +297,7 @@ public class EmployeeManagementSystem {
         }
     }
 
+    // Update employee details
     public static void updateEmployee() {
 
         System.out.print(
@@ -355,6 +366,7 @@ public class EmployeeManagementSystem {
                 "✅ Employee updated!");
     }
 
+    // Delete employee from system
     public static void deleteEmployee() {
 
         System.out.print(

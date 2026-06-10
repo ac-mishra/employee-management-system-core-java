@@ -5,6 +5,10 @@ import org.example.model.Employee;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+/**
+ * Service class responsible for managing
+ * employee operations and business logic.
+ */
 
 public class EmployeeService {
 
@@ -26,7 +30,10 @@ public class EmployeeService {
                     e);
         }
     }
-
+    /**
+     * Adds a new employee to the system.
+     *Employee object
+     */
     public void addEmployee(
             Employee employee) {
 
@@ -46,12 +53,17 @@ public class EmployeeService {
 
         return employeeMap;
     }
-
+    /**
+     * Searches employee by Employee ID
+     */
     public Employee findById(String id) {
 
         return employeeMap.get(id);
     }
 
+    /**
+     * Searches employees using name keyword.
+     */
     public void searchByName(String keyword) {
 
         boolean found = false;
@@ -74,6 +86,9 @@ public class EmployeeService {
         }
     }
 
+    /**
+     * Searches employees by department.
+     */
     public void searchByDepartment(
             String department) {
 
@@ -96,12 +111,19 @@ public class EmployeeService {
         }
     }
 
+    /**
+     * Saves all employee data to file.
+     */
     public void saveData() {
 
         EmployeeFileHandler
                 .saveEmployees(employees);
     }
 
+    /**
+     * Loads employee data from file
+     * and rebuilds HashMap records.
+     */
     public void loadData() {
 
         employees =

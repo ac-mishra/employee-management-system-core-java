@@ -2,6 +2,11 @@ package org.example.model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+/**
+ * Employee class represents an employee entity.
+ * Stores employee details such as ID, name,
+ * department, position, salary, and joining date.
+ */
 
 public class Employee implements Serializable {
 

@@ -5,11 +5,19 @@ import org.example.model.Employee;
 import java.io.*;
 import java.util.ArrayList;
 
+/**
+ * Handles file operations such as
+ * saving and loading employee data.
+ */
 public class EmployeeFileHandler {
 
     private static final String FILE_NAME =
             "data/employees.dat";
 
+    /**
+     * Serializes employee list and
+     * stores it into a file.
+     */
     public static void saveEmployees(
             ArrayList<Employee> employees) {
 
@@ -42,6 +50,10 @@ public class EmployeeFileHandler {
         }
     }
 
+    /**
+     * Reads employee data from file
+     * and returns employee list.
+     */
     @SuppressWarnings("unchecked")
     public static ArrayList<Employee> loadEmployees() {
 

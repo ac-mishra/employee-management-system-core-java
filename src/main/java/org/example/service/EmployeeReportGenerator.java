@@ -5,8 +5,16 @@ import org.example.model.Employee;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * Generates employee reports and statistics.
+ */
 public class EmployeeReportGenerator {
 
+    /**
+     * Generates salary statistics,
+     * department summary,
+     * and position summary.
+     */
     public static void generateSalaryReport(
             ArrayList<Employee> employees) {
 
